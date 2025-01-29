@@ -1,0 +1,193 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+p {
+  margin: 0 !important;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+a {
+  cursor: pointer;
+}
+
+.container {
+  padding: 0 10%;
+}
+
+.row {
+  display: flex;
+  gap: 30px;
+}
+
+.right {
+  max-width: 70%;
+}
+
+.btn {
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #6ee74c;
+}
+
+.btn-primary:hover {
+  background: #79d269;
+}
+
+.btn-wood {
+  background-color: #8b5e3c;
+}
+
+.btn-wood:hover {
+  background: #6b4620;
+}
+
+.custom-breadcrumb {
+  display: flex;
+  gap: 5px;
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+.custom-breadcrumb li {
+  display: inline;
+}
+
+.custom-breadcrumb .divider {
+  margin-left: 5px;
+}
+
+.custom-breadcrumb a {
+  color: #007bff;
+}
+
+.custom-breadcrumb .active {
+  color: #6c757d;
+}
+
+.custom-hr {
+  border: 1px solid #e0e0e0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-continue {
+  background-color: #007bff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-continue:hover {
+  background-color: #0056b3;
+}
+
+.btn-add-to-cart {
+  background-color: #4caf50;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #388e3c;
+}
+
+input:hover,
+select:hover {
+  border: 1px solid #4caf50 !important;
+  cursor: pointer;
+}

@@ -1,0 +1,69 @@
+<!-- <div>
+  <div class="cart-container">
+    <a id="myCart" (click)="goToShCart()">
+      <img src="assets/template/themes/images/ico-cart.png" alt="cart" />
+      <ng-container *ngIf="shoppingCart$ | async as state">
+        <ng-container
+          *ngIf="state.dataState == CartDataState.LOADED && state.shoppingCart"
+        >
+          <span>{{ state.shoppingCart.items.length }} Item(s) in your cart</span>
+          <ng-container *ngIf="state.shoppingCart">
+            <span
+              *ngIf="state.shoppingCart.items[0].product"
+              class="price"
+            >
+              {{ state.shoppingCart.items[0].product.productPrice.symbol
+              }}{{ shoppingCartService.calcTotalPrice(state.shoppingCart) }}
+            </span>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </a>
+  </div>
+  <ul id="sideManu" class="categories-container">
+    <li
+      class="nav-item"
+      (click)="onSearchByCategory(cat)"
+      *ngFor="let cat of categories"
+      class="subMenu open"
+    >
+      <a> {{ cat }}</a>
+    </li>
+  </ul>
+</div> -->
+
+<div style="margin-bottom: 20px">
+  <div class="cart-container">
+    <a>
+      <img src="assets/img/bag.svg" alt="cart" />
+      <span>5 Item(s) in your cart</span>
+      <span class="price">$250</span>
+    </a>
+  </div>
+  <ul class="categories-container">
+    <li class="nav-item">
+      <a href="#">category1</a>
+    </li>
+    <li class="nav-item">
+      <a href="#">category2</a>
+    </li>
+    <li class="nav-item">
+      <a href="#">category3</a>
+    </li>
+    <li class="nav-item">
+      <a href="#">category4</a>
+    </li>
+    <li class="nav-item">
+      <a href="#">category1</a>
+    </li>
+    <li class="nav-item">
+      <a href="#">category2</a>
+    </li>
+    <li class="nav-item">
+      <a href="#">category3</a>
+    </li>
+    <li class="nav-item">
+      <a href="#">category4</a>
+    </li>
+  </ul>
+</div>

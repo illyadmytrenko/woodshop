@@ -1,0 +1,56 @@
+.navbar {
+  padding: 20px 0;
+  background: linear-gradient(135deg, #d2b48c, #deb887);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-inner {
+  display: flex;
+  padding: 0 10%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: 600;
+  color: #4e3629;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.navbar-form {
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #8b5e3c;
+  background-color: #fdf3e5;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.search-input {
+  cursor: text;
+  padding-left: 30px;
+}
+
+.navbar-ul {
+  display: flex;
+  gap: 10px;
+  color: white;
+}
+
+.navbar-li {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-li:hover {
+  color: #73f8d2;
+}

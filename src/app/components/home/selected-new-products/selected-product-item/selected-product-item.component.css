@@ -1,0 +1,48 @@
+.product-item {
+  padding: 15px;
+  background-color: #f5f1e1;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-item .new-sticker {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+}
+
+.product-item img.product-image {
+  max-width: 145px;
+}
+
+.product-item .caption h5 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #8b5e3c;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.product-item .caption div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+.product-item .btn {
+  text-decoration: none;
+}
+
+.product-item .caption span {
+  font-weight: 700;
+  color: #2a9d8f;
+}

@@ -1,0 +1,11 @@
+.selectedProducts-container {
+  display: flex;
+  overflow-x: hidden;
+  margin-bottom: 40px;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.selectedProducts-container:hover {
+  overflow-x: auto;
+}
