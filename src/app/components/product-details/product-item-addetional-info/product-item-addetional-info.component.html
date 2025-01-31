@@ -1,0 +1,70 @@
+<ng-container *ngIf="product">
+  <div class="product-additional-container">
+    <h4 class="product-additional-title">Product Information</h4>
+    <table class="product-table">
+      <tbody>
+        <tr>
+          <th colspan="2">Product Details</th>
+        </tr>
+        <tr>
+          <td class="label">quntity:</td>
+          <td class="value">{{ product.quantity }}</td>
+        </tr>
+        <tr>
+          <td class="label">Brand:</td>
+          <td class="value">{{ product.brand }}</td>
+        </tr>
+        <tr>
+          <td class="label">Model:</td>
+          <td class="value">{{ product.name }}</td>
+        </tr>
+        <tr>
+          <td class="label">Released on:</td>
+          <td class="value">{{ productService.getDate(product) }}</td>
+        </tr>
+        <tr>
+          <td class="label">Dimensions:</td>
+          <td class="value">
+            {{ product.dimension.height }}cm h x
+            {{ product.dimension.weight }}cm w x
+            {{ product.dimension.larger }}cm l x
+            {{ product.dimension.weight }}Kg
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-container>
+
+<!-- <div>
+  <div class="product-additional-container">
+    <h4 class="product-additional-title">Product Information</h4>
+    <table class="product-table">
+      <tbody>
+        <tr>
+          <th colspan="2">Product Details</th>
+        </tr>
+        <tr>
+          <td class="label">Quantity:</td>
+          <td class="value">15</td>
+        </tr>
+        <tr>
+          <td class="label">Brand:</td>
+          <td class="value">ExampleBrand</td>
+        </tr>
+        <tr>
+          <td class="label">Model:</td>
+          <td class="value">Some Model</td>
+        </tr>
+        <tr>
+          <td class="label">Released on:</td>
+          <td class="value">January 5, 2023</td>
+        </tr>
+        <tr>
+          <td class="label">Dimensions:</td>
+          <td class="value">20cm h x 10cm w x 15cm l x 2Kg</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->
