@@ -122,6 +122,11 @@ a {
   color: white;
 }
 
+.btn:disabled {
+  background: gray !important;
+  cursor: not-allowed;
+}
+
 .btn-primary {
   background-color: #6ee74c;
 }
@@ -168,14 +173,14 @@ a {
 }
 
 .btn-continue {
-  background-color: #007bff;
+  background-color: #48b667;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 .btn-continue:hover {
-  background-color: #0056b3;
+  background-color: #1cbf75;
 }
 
 .btn-add-to-cart {
@@ -190,4 +195,8 @@ input:hover,
 select:hover {
   border: 1px solid #4caf50 !important;
   cursor: pointer;
+}
+
+textarea:hover {
+  border: 1px solid #4caf50 !important;
 }

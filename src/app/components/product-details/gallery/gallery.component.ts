@@ -7,10 +7,10 @@ import { Product } from '../../../models/product.model';
   styleUrls: ['./gallery.component.css'],
 })
 export class GalleryComponent {
-  @Input() product: Product|null =null;
-  selectedImage: string | undefined = this?.product?.productImagesBas64[1];
+  @Input() product: Product | null = null;
+  // selectedImage: string | undefined = this?.product?.productImagesBas64[1];
 
-  // selectedImage: string = '/assets/img/product_sample.png';
+  selectedImage: string = '/assets/img/product_sample.png';
 
   changeImage(image: string) {
     this.selectedImage = image;

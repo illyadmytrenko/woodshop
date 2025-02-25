@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./searched-products-list-header.component.css'],
 })
 export class SearchedProductsListHeaderComponent {
-   @Input() productsNumber!: number ;
+  @Input() productsNumber!: number;
 }
