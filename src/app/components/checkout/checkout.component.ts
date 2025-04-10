@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 // import { SecurityService } from '../../security/security.service';
 // import { Store } from '@ngrx/store';
-// import { Observable } from 'rxjs';
-// import { ShoppingCartState } from '../../ngrx/ShoppingCartState/cart.reducer';
+import { Observable } from 'rxjs';
+import { ShoppingCartState } from '../../ngrx/ShoppingCartState/cart.reducer';
 // import { ShoppingCartService } from 'src/app/services/shoppingCartService/shopping-cart.service';
 
 interface InvoiceResponse {
@@ -23,6 +23,7 @@ export class CheckoutComponent {
 
   constructor(
     private fb: FormBuilder,
+    // private shoppingCartService: ShoppingCartService
     private http: HttpClient //, private secService: SecurityService, // private store: Store<{ shoppingCartState: ShoppingCartState }>
   ) {
     this.checkoutForm = this.fb.group({

@@ -9,6 +9,8 @@
 // import { ProductService } from '../../services/productService/product.service';
 // import { EventType } from '../../models/common.model';
 // import { SecurityService } from '../../security/security.service';
+// import { forkJoin } from 'rxjs';
+// import { HttpClient } from '@angular/common/http'
 
 // @Component({
 //   selector: 'app-searched-products-list',
@@ -19,10 +21,23 @@
 //   productState$?: Observable<ProductState>;
 //   public readonly ProductStateEnum = DataStateEnum;
 //   public readonly fetchMethode = FetchMethode;
+//   reviews: { userId: string; reviewText: string; rating: number; date: string }[] = [];
+//  productReviewsCount: { [productId: string]: number } = {};
+
+//   minAvailablePrice: number = 0;
+//   maxAvailablePrice: number = 1000;
+//   selectedMaxPrice: number = 0;
+//   selectedSortType: string = '';
+
+//   allProducts: any[] = [];
+//   filteredProducts: any[] = [];
+//   sortedProducts: any[] = [];
+
 //   constructor(
 //     private store: Store<any>,
 //     private productService: ProductService,
-//     private secSecurity: SecurityService
+//     private secSecurity: SecurityService,
+//     private http: HttpClient
 //   ) {}
 
 //   ngOnInit(): void {
@@ -30,6 +45,21 @@
 
 //     this.store.subscribe((s) => {
 //       if (s.productState.dataState == this.ProductStateEnum.LOADED) {
+//        const products = s.productState.products;
+//        this.allProducts = products;
+
+// if (products?.length) {
+//   const prices = products.map(p => p.productPrice);
+//   this.minAvailablePrice = Math.min(...prices);
+//   this.maxAvailablePrice = Math.max(...prices);
+//   this.selectedMaxPrice = this.maxAvailablePrice;
+
+//   const ids = products.map(p => p.productId);
+//   this.getReviews(ids);
+
+//   this.applyFilterAndSort();
+// }
+
 //         if (s.productState.products[0] && this.secSecurity.profile) {
 //           if (this.secSecurity.profile.id) {
 //             if (s.productState.fetchMethode == FetchMethode.SEARCH_BY_CATEGORY)
@@ -49,6 +79,67 @@
 //       }
 //     });
 //   }
+
+// onPriceFilterChanged(maxPrice: number): void {
+//   this.selectedMaxPrice = maxPrice;
+//   this.applyFilterAndSort();
+// }
+
+// onSortChanged(sortType: string): void {
+//   this.selectedSortType = sortType;
+//   this.applyFilterAndSort();
+// }
+
+// applyFilterAndSort(): void {
+//   this.filteredProducts = this.allProducts.filter(
+//     product => product.productPrice <= this.selectedMaxPrice
+//   );
+
+//   this.sortedProducts = [...this.filteredProducts];
+
+//   switch (this.selectedSortType) {
+//     case 'price-asc':
+//       this.sortedProducts.sort((a, b) => a.productPrice - b.productPrice);
+//       break;
+//     case 'price-desc':
+//       this.sortedProducts.sort((a, b) => b.productPrice - a.productPrice);
+//       break;
+//     case 'date-newest':
+//       this.sortedProducts.sort((a, b) =>
+//         new Date(b.addingDate).getTime() - new Date(a.addingDate).getTime()
+//       );
+//       break;
+//     case 'date-oldest':
+//       this.sortedProducts.sort((a, b) =>
+//         new Date(a.addingDate).getTime() - new Date(b.addingDate).getTime()
+//       );
+//       break;
+//     case 'popular':
+//       this.sortedProducts.sort((a, b) =>
+//         (this.productReviewsCount[b.productId] || 0) - (this.productReviewsCount[a.productId] || 0)
+//       );
+//       break;
+//   }
+// }
+
+// getReviews(productIds: string[]) {
+//   const requests = productIds.map(productId =>
+//     this.http.get<
+//       { userId: string; reviewText: string; rating: number; date: string }[]
+//     >(`http://localhost:8081/api/reviews?productId=${productId}`)
+//   );
+
+//   forkJoin(requests).subscribe({
+//     next: (allReviews) => {
+//       productIds.forEach((id, index) => {
+//         this.productReviewsCount[id] = allReviews[index].length;
+//       });
+//     },
+//     error: (error) => {
+//       console.error('Ошибка при получении отзывов:', error);
+//     },
+//   });
+// }
 // }
 
 import { Component } from '@angular/core';
