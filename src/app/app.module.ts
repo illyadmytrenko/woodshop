@@ -46,7 +46,9 @@ import { SingleItemComponent } from './components/shopping-cart/shopping-cart-it
 // import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { environment } from '../environments/environment';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { FormsModule } from '@angular/forms';
+
 // export function initKeyClock(kcSecurity: KeycloakService) {
 //   return () =>
 //     kcSecurity.init({
@@ -96,6 +98,7 @@ import { FormsModule } from '@angular/forms';
     // ProductPickedImagesComponent,
     // EditProductComponent,
     CheckoutComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

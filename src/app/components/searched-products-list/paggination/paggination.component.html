@@ -1,9 +1,9 @@
-<!-- <ng-container *ngIf="pageInfo">
+<!-- <ng-container *ngIf="pageInfo && pageInfo.totalPages > 0">
   <div class="custom-pagination">
     <ul class="pagination-list">
       <li><a class="pagination-arrow" (click)="previousPage()">&lsaquo;</a></li>
       <li *ngFor="let page of [].constructor(pageInfo.totalPages); let i  = index">
-        <a *ngIf="i === pageInfo.number" class="pagination-item active">{{i}}</a>
+        <a *ngIf="i === pageInfo.number" class="pagination-item active">{{i + 1}}</a>
         <a (click)="onPageHandle(i)" *ngIf="i !== pageInfo.number" class="pagination-item">{{i}}</a>
       </li>
       <li><a (click)="nextPage()" class="pagination-arrow">&rsaquo;</a></li>

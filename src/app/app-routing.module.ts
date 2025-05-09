@@ -6,6 +6,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { ContactComponent } from './components/contact/contact.component';
 import { SearchedProductsListComponent } from './components/searched-products-list/searched-products-list.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ProfileComponent } from './components/profile/profile.component';
 // import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 // import { AddProductComponent } from './components/add-product/add-product.component';
 // import { EditProductComponent } from './components/edit-product/edit-product.component';
@@ -29,6 +30,13 @@ const routes: Routes = [
   { path: 'product-details', component: ProductDetailsComponent },
   { path: 'searched-products', component: SearchedProductsListComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'profile', component: ProfileComponent },
+  // {
+  //   path: 'profile',
+  //   component: ProfileComponent,
+  //   canActivate: [AuthGuard],
+  //   data: { roles: ['USER', 'ADMIN'] }
+  // },
   // {path : "admin" , component:AdminDashboardComponent , canActivate:[AuthGuard]  , data : {roles : ['ADMIN']}},
   // {path : "addProduct" , component:AddProductComponent ,canActivate:[AuthGuard]  , data : {roles : ['ADMIN']}},
   // {path : "edit-product" , component:EditProductComponent , canActivate:[AuthGuard]  , data : {roles : ['ADMIN']}},

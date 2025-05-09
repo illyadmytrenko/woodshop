@@ -61,31 +61,13 @@
 //   }
 
 //   onSearchProduct() {
-//     let keyword = this.searchFormGroup?.value.keyword;
-//     let category = this.searchFormGroup?.value.category;
-//     if (keyword !== '') {
-//       this.store.dispatch(
-//         new GetProductsPageByKeyWordAction({
-//           pageSize: { page: 0, size: 6 },
-//           data: keyword,
-//         })
-//       );
-//       this.router.navigateByUrl('/searched-products');
-//     } else {
-//       if (category !== 'ALL') {
-//         this.store.dispatch(
-//           new GetProductsPageByCategoryAction({
-//             pageSize: { page: 0, size: 6 },
-//             data: category,
-//           })
-//         );
-//         this.router.navigateByUrl('/searched-products');
-//       } else {
-//         this.store.dispatch(new GetProductsPageAction({ page: 0, size: 6 }));
-//         this.router.navigateByUrl('/searched-products');
-//       }
-//     }
-//   }
+//   const keyword = this.searchFormGroup?.value.keyword ?? '';
+//   const category = this.searchFormGroup?.value.category ?? 'ALL';
+
+//   this.store.dispatch(SetSearchCriteria({ keyword, category }));
+
+//   this.router.navigateByUrl('/searched-products');
+// }
 
 //   onShCart() {
 //     this.router.navigateByUrl('/cart');

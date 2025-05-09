@@ -74,6 +74,14 @@
               >
             </a>
           </li>
+          <li class="navbar-li" *ngIf="securityService.profile">
+          <a href="/profile"
+            ><img
+              src="assets/img/account.png"
+              alt="user icon"
+              class="user-icon"
+          /></a>
+        </li>
         </ul>
       </div>
 </div> -->
@@ -118,6 +126,14 @@
         </li>
         <li class="navbar-li">
           <span class="btn btn-primary">Logout</span>
+        </li>
+        <li class="navbar-li">
+          <a href="/profile"
+            ><img
+              src="assets/img/account.png"
+              alt="user icon"
+              class="user-icon"
+          /></a>
         </li>
         <li class="navbar-li">
           <a><span class="btn btn-wood">ADMIN</span></a>

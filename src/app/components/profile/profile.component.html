@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="row">
+    <app-sidecar> </app-sidecar>
+    <div class="profile-content">
+      <div class="user-info">
+        <img src="/assets/img/profile.png" alt="user avatar" class="avatar" />
+        <div *ngIf="!isEditing" class="user-info-main">
+          <h2>{{ user.firstname }} {{ user.lastname }}</h2>
+          <p>Email: {{ user.email }}</p>
+          <button class="btn btn-primary edit-btn" (click)="startEdit()">
+            Change info
+          </button>
+          <button class="btn btn-primary delete-btn" (click)="deleteAccount()">
+            Delete Account
+          </button>
+        </div>
+        <form
+          *ngIf="isEditing"
+          class="edit-form"
+          #editForm="ngForm"
+          (ngSubmit)="saveEdit()"
+          novalidate
+        >
+          <label>
+            Name:
+            <input
+              type="text"
+              [(ngModel)]="editName"
+              name="name"
+              required
+              pattern="^[a-zA-Zа-яА-ЯіІїЇєЄґҐёЁ]+(?: [a-zA-Zа-яА-ЯіІїЇєЄґҐёЁ]+)*$"
+              #nameInput="ngModel"
+            />
+          </label>
+          <div class="error" *ngIf="nameInput.invalid && nameInput.touched">
+            <small *ngIf="nameInput.errors?.['required']"
+              >Name is required.</small
+            >
+            <small *ngIf="nameInput.errors?.['pattern']"
+              >Enter a valid name.</small
+            >
+          </div>
+          <label>
+            Email:
+            <input
+              type="email"
+              [(ngModel)]="editEmail"
+              name="email"
+              required
+              email
+              #emailInput="ngModel"
+            />
+          </label>
+          <div class="error" *ngIf="emailInput.invalid && emailInput.touched">
+            <small *ngIf="emailInput.errors?.['required']"
+              >Email is required.</small
+            >
+            <small *ngIf="emailInput.errors?.['email']"
+              >Enter a valid email address.</small
+            >
+          </div>
+          <div class="edit-btns">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="editForm.invalid"
+            >
+              Save
+            </button>
+            <button type="button" class="btn btn-wood" (click)="cancelEdit()">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="orders-section">
+        <h3>Your orders</h3>
+        <ng-container *ngIf="orders.length > 0; else noOrders">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Data</th>
+                <th>Summary</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let order of orders">
+                <td>{{ order.id }}</td>
+                <td>{{ order.date }}</td>
+                <td>{{ order.total }} ₴</td>
+                <td>{{ order.status }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </ng-container>
+        <ng-template #noOrders>
+          <p class="no-orders-text">You haven't made any orders yet.</p>
+          <img
+            src="/assets/img/no-orders.png"
+            alt="no-orders image"
+            class="no-orders-image"
+          />
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

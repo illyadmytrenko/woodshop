@@ -43,6 +43,26 @@
 //   ngOnInit(): void {
 //     this.productState$ = this.store.pipe(map((state) => state.productState));
 
+// this.store.select('searchState').subscribe(({ keyword, category }) => {
+//   if (keyword !== '') {
+//     this.store.dispatch(
+//       new GetProductsPageByKeyWordAction({
+//         pageSize: { page: this.currentPage, size: 6 },
+//         data: keyword,
+//       })
+//     );
+//   } else if (category !== 'ALL') {
+//     this.store.dispatch(
+//       new GetProductsPageByCategoryAction({
+//         pageSize: { page: this.currentPage, size: 6 },
+//         data: category,
+//       })
+//     );
+//   } else {
+//     this.store.dispatch(new GetProductsPageAction({ page: this.currentPage, size: 6 }));
+//   }
+// });
+
 //     this.store.subscribe((s) => {
 //       if (s.productState.dataState == this.ProductStateEnum.LOADED) {
 //        const products = s.productState.products;
